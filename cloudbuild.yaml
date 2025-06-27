@@ -1,0 +1,13 @@
+steps:
+  - name: hashicorp/terraform:light
+    dir: infra
+    args:
+      - init
+  - name: hashicorp/terraform:light
+    dir: infra
+    args:
+      - apply
+      - -auto-approve
+
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
